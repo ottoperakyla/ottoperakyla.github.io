@@ -11,7 +11,8 @@
     <title>Otto Peräkylä CV | Web Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Otto Peräkylä portfolio website. I am a Web Developer with 4 years of experience in modern frontend development with technologies such as React and Redux.">    
-    <style>
+   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chess" type="text/css"/>
+   <style>
       /* cyrillic-ext */
       @font-face {
         font-family: 'Source Sans Pro';
@@ -78,9 +79,35 @@
         width: 120px;
         float: left;
       }
+      .nav {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      .nav__item {
+        display: inline-block;
+        margin-right: 5px;
+      }
+      .nav__link {
+        text-decoration: none;
+        font-weight: bold;
+        background-color: #999;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .nav__link:hover {
+        background-color: #888;
+      }
     </style>
   </head>
   <body>
+    <ul class="nav">
+      <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+      <li class="nav__item"><a class="nav__link" href="#stuff">Stuff</a></li>
+    </ul>
+  
+    <div class="template home">
     <h1>Otto Peräkylä<br/><small>Web Developer</small></h1>
     <img src="otto.jpeg" alt="Otto Peräkylä" />
    
@@ -144,5 +171,24 @@
       <li><a href="https://github.com/ottoperakyla/">Github</a></li>
       <li><a href="https://www.facebook.com/otto.perakyla">Facebook</a></li>
     </ul>
+  </div>
+
+  <div class="template stuff">
+    <h1>Stuff</h1>
+    <select>
+      <option selected value="chess">Chess</option>
+      <option value="connectFour">Connect Four</option>
+      <option value="ticTacToe">Tic tac toe</option>
+    </select>
+    <div id="root"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bacon.js/2.0.5/Bacon.min.js"></script>
+  <script src="view.js" type="text/javascript"></script>
+  <script defer src="tic-tac-toe.js" type="text/javascript"></script>
+  <script defer src="connect-four.js" type="text/javascript"></script>
+  <script defer src="chess.js" type="text/javascript"></script>
+  
   </body>
 </html>
