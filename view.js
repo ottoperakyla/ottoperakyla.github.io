@@ -17,7 +17,7 @@ $window
 $stuffSelect
   .asEventStream('change')
   .map(({currentTarget}) => currentTarget.value)
-  .startWith('chess')
+  .startWith('jokeripokeri')
   .onValue(module => {
     modules[module].init()
   })
