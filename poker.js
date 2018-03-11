@@ -23,11 +23,11 @@ class Deck {
   getCardImage(suite, value) {
     let path = `img/$value_of_${suite}.png`
     switch (value) {
-      case 11: return path.replace('$value', 'jack')
-      case 12: return path.replace('$value', 'queen')
-      case 13: return path.replace('$value', 'king')
-      case 14: return path.replace('$value', 'ace')
-      default: return path.replace('$value', value)
+    case 11: return path.replace('$value', 'jack')
+    case 12: return path.replace('$value', 'queen')
+    case 13: return path.replace('$value', 'king')
+    case 14: return path.replace('$value', 'ace')
+    default: return path.replace('$value', value)
     }
   }
 
@@ -163,10 +163,10 @@ class Blackjack {
     return template
   }
 
-  init(settings) {
+  init() {
     this.injectStyles()
 
-    const deck = new Deck('blackjack')
+    const deck = new Deck({mode:'blackjack'})
     const handPlayer = deck.drawHand()
     const handDealer = deck.drawHand()
     const $game = $(this.render({
@@ -185,7 +185,6 @@ class Blackjack {
     const STATUS_BEAT = 'better hand'
     const STATUS_BLACKJACK = 'blackjack'
     const STATUS_BUST = 'went bust'
-    const STATUS_TIE = 'tie'
     
     const winnerBus = new Bacon.Bus()
 
