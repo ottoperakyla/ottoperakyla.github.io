@@ -10,7 +10,7 @@ const showTemplate = hash => {
 const gamesFilter = isLive ? prop('live') : identity
 const games = [
   {id: 'jokeripokeri', name: 'Jokeripokeri', live: true},
-  {id: 'gameOfLife', name: 'Game of life', live: false, selected: true},
+  {id: 'gameOfLife', name: 'Game of life', live: true, selected: true},
   {id: 'blackjack', name: 'Blackjack', live: true},
   {id: 'memoryGame', name: 'Memory game', live: false},
   {id: 'chess', name: 'Chess', live: false},

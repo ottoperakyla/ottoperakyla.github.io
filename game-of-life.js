@@ -12,7 +12,7 @@ class gameOfLife {
     return board
   }
 
-  getGrid(canvas, context, board) {
+  renderGrid(canvas, context, board) {
     context.clearRect(0, 0, canvas.width, canvas.height)
     for (var i = 0; i < board.length; i++) {
       for (var j = 0; j < board[i].length; j++) {
@@ -100,7 +100,7 @@ class gameOfLife {
     gridRenderBus
       .onValue(grid => {
         currentGrid = grid
-        this.getGrid(canvas, context, grid)
+        this.renderGrid(canvas, context, grid)
       })
 
     pauseClicks.merge(resetClicks)
